@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,7 +6,6 @@ import java.nio.file.StandardOpenOption;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -190,7 +188,6 @@ public class CountriesApp {
 			int a = -1;
 			boolean found = false;
 			for (int i = 0; i < countries.size(); i++) {
-				String s = countries.get(i).getName().toLowerCase();
 				if (countries.get(i).getName().equalsIgnoreCase(input)) {
 					a = i;
 					found = true;
@@ -267,7 +264,6 @@ public class CountriesApp {
 			int a = -1;
 			boolean found = false;
 			for (int i = 0; i < countries.size(); i++) {
-				String s = countries.get(i).getName().toLowerCase();
 				if (countries.get(i).getName().equalsIgnoreCase(input)) {
 					a = i;
 					found = true;
