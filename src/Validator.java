@@ -14,14 +14,28 @@ public class Validator {
 					return num;
 				}
 			} catch (IndexOutOfBoundsException ie) {
-				System.out.println("Selection must be between " + a +
-						" and " +  b + ". Please try again. (" + a + "-" + b + ")");
+				System.out.print("Selection must be between " + a +
+						" and " +  b + ". Please try again: ");
 			} catch (NumberFormatException e) {
-				System.out.println("Input must be a number (" + a + "-" + b + 
-									"). Please try again.");
+				System.out.print("Input must be a number (" + a + "-" + b + 
+									"). Please try again: ");
 			}
 		}
 		return -1;
+	}
+	
+	//check if a string is an integer in correct range
+	public static boolean isIntInRange(int a, int b, String input) {
+		try {
+			int c = Integer.parseInt(input);
+			if (c >= a && c <= b) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
 	}
 	
 	/**
@@ -64,13 +78,16 @@ public class Validator {
 		// This approach uses exception handling.
 		while (true) {
 			try {
-				return scnr.nextLine();
+				if (scnr.hasNext()) {
+					return scnr.nextLine();
+				} else {
+					System.out.print("Input is empty. Please try again: ");
+				}
+				
 			} catch (Exception e) {
 				System.out.print("Invalid string. Please try again: ");
 			}
 		}
 	}
-	
-	
 	
 }
